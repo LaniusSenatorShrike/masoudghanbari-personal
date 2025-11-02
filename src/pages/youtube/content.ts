@@ -1,5 +1,5 @@
 export const youtubeContent = {
-  title: "Video Content",
+  title: "YouTube",
   channelUrl: "https://youtube.com",
   videos: [
     {

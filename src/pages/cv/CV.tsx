@@ -32,7 +32,7 @@ export function CV() {
                 className="border-l-4 border-[var(--color-accent)] pl-8"
               >
                 <div className="mb-4">
-                  <Badge variant="outline" className="mb-3">
+                  <Badge variant="outline" className="mb-3 text-gray-400">
                     {job.period}
                   </Badge>
                   <h4 className="mb-1">{job.role}</h4>
@@ -82,7 +82,7 @@ export function CV() {
                     <h5 className="mb-2">{cert.name}</h5>
                     <p className="text-gray-400">{cert.issuer}</p>
                   </div>
-                  <Badge variant="outline">{cert.year}</Badge>
+                  <Badge variant="outline" className="text-gray-400">{cert.year}</Badge>
                 </div>
               </div>
             ))}

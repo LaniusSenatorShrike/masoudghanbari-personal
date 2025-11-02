@@ -10,12 +10,10 @@ import {
 } from './ui/command';
 import {
   Home,
-  User,
   Briefcase,
   BookOpen,
   FileText,
   Youtube,
-  Blocks,
   Mail,
   Download,
   Moon,
@@ -67,31 +65,23 @@ export function CommandPalette({
         <CommandGroup heading="Navigation">
           <CommandItem onSelect={() => handleSelect('home')}>
             <Home className="mr-2 h-4 w-4" />
-            <span>Home</span>
-          </CommandItem>
-          <CommandItem onSelect={() => handleSelect('about')}>
-            <User className="mr-2 h-4 w-4" />
             <span>About</span>
-          </CommandItem>
-          <CommandItem onSelect={() => handleSelect('projects')}>
-            <Briefcase className="mr-2 h-4 w-4" />
-            <span>Projects</span>
-          </CommandItem>
-          <CommandItem onSelect={() => handleSelect('blog')}>
-            <BookOpen className="mr-2 h-4 w-4" />
-            <span>Blog</span>
           </CommandItem>
           <CommandItem onSelect={() => handleSelect('cv')}>
             <FileText className="mr-2 h-4 w-4" />
             <span>CV</span>
           </CommandItem>
+          <CommandItem onSelect={() => handleSelect('blog')}>
+            <BookOpen className="mr-2 h-4 w-4" />
+            <span>Blog</span>
+          </CommandItem>
           <CommandItem onSelect={() => handleSelect('youtube')}>
             <Youtube className="mr-2 h-4 w-4" />
             <span>YouTube</span>
           </CommandItem>
-          <CommandItem onSelect={() => handleSelect('blockchain')}>
-            <Blocks className="mr-2 h-4 w-4" />
-            <span>Blockchain</span>
+          <CommandItem onSelect={() => handleSelect('projects')}>
+            <Briefcase className="mr-2 h-4 w-4" />
+            <span>Projects</span>
           </CommandItem>
           <CommandItem onSelect={() => handleSelect('contact')}>
             <Mail className="mr-2 h-4 w-4" />

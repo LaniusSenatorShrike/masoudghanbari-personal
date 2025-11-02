@@ -8,15 +8,13 @@ import { Toaster } from './components/ui/sonner';
 
 // Page imports
 import { Home } from './pages/home/Home';
-import { About } from './pages/about/About';
 import { Projects } from './pages/projects/Projects';
 import { Blog } from './pages/blog/Blog';
 import { CV } from './pages/cv/CV';
 import { YouTube } from './pages/youtube/YouTube';
-import { Blockchain } from './pages/blockchain/Blockchain';
 import { Contact } from './pages/contact/Contact';
 
-type Page = 'home' | 'about' | 'projects' | 'blog' | 'cv' | 'youtube' | 'blockchain' | 'contact';
+type Page = 'home' | 'projects' | 'blog' | 'cv' | 'youtube' | 'contact';
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
@@ -64,8 +62,6 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <Home onNavigate={handleNavigate} />;
-      case 'about':
-        return <About />;
       case 'projects':
         return <Projects />;
       case 'blog':
@@ -74,8 +70,6 @@ function App() {
         return <CV />;
       case 'youtube':
         return <YouTube />;
-      case 'blockchain':
-        return <Blockchain />;
       case 'contact':
         return <Contact />;
       default:

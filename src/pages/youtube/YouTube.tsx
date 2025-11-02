@@ -37,7 +37,7 @@ export function YouTube() {
               </div>
 
               <div className="p-6">
-                <Badge variant="secondary" className="mb-3">
+                <Badge variant="secondary" className="mb-3 text-gray-400">
                   {video.category}
                 </Badge>
                 <h4 className="mb-3">{video.title}</h4>

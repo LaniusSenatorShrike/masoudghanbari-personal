@@ -43,7 +43,7 @@ export function Projects() {
               className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors"
             >
               <div className="flex justify-between items-start mb-4">
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="outline" className="text-xs text-gray-400">
                   {project.category}
                 </Badge>
                 <div className="flex gap-2">

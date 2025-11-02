@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 import { Textarea } from '../../components/ui/textarea';
-import { Mail, MapPin, Linkedin, Github, Calendar, Send, GraduationCap } from 'lucide-react';
+import { Mail, Linkedin, Github, Calendar, Send, GraduationCap, Twitter } from 'lucide-react';
 import { Label } from '../../components/ui/label';
 import { contactContent as content } from './content';
 
 const iconMap = {
   Mail,
-  MapPin,
   Linkedin,
   Github,
   GraduationCap,
+  Twitter,
 };
 
 export function Contact() {
@@ -36,15 +36,34 @@ export function Contact() {
   return (
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-8">
           <h2 className="mb-4">{content.title}</h2>
-          <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
+          <div className="w-20 h-1 bg-[var(--color-accent)] mb-6"></div>
+
+          {/* Social Media Icons */}
+          <div className="flex gap-4 mb-12">
+            {content.contactInfo.map((item) => {
+              const Icon = iconMap[item.icon as keyof typeof iconMap];
+              return (
+                <a
+                  key={item.label}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-gray-700 light:border-gray-300 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+                  aria-label={item.label}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              );
+            })}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="h-full">
+            <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
               <div>
                 <Label htmlFor="name">Name</Label>
                 <Input
@@ -82,7 +101,7 @@ export function Contact() {
                   className="mt-2"
                 />
               </div>
-              <div>
+              <div className="flex-1 flex flex-col">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
@@ -91,8 +110,7 @@ export function Contact() {
                   onChange={handleChange}
                   placeholder="Tell me more..."
                   required
-                  rows={5}
-                  className="mt-2"
+                  className="mt-2 flex-1 min-h-[200px]"
                 />
               </div>
               <Button
@@ -105,40 +123,8 @@ export function Contact() {
             </form>
           </div>
 
-          {/* Contact Info & Other */}
+          {/* Calendly & Newsletter */}
           <div className="space-y-8">
-            {/* Contact Info */}
-            <div>
-              <h3 className="mb-6">Information</h3>
-              <div className="space-y-6">
-                {content.contactInfo.map((item) => {
-                  const Icon = iconMap[item.icon as keyof typeof iconMap];
-                  return (
-                    <div key={item.label} className="flex items-start gap-4">
-                      <Icon className="h-5 w-5 text-[var(--color-accent)] mt-1" />
-                      <div>
-                        <p className="text-sm text-gray-400 mb-1">
-                          {item.label}
-                        </p>
-                        {item.link ? (
-                          <a
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[var(--color-accent)] hover:underline"
-                          >
-                            {item.value}
-                          </a>
-                        ) : (
-                          <p>{item.value}</p>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
             {/* Calendly */}
             <div className="border border-gray-700 p-8">
               <Calendar className="h-8 w-8 text-[var(--color-accent)] mb-4" />

@@ -10,13 +10,11 @@ interface NavigationProps {
 }
 
 const navItems = [
-  { name: 'Home', id: 'home' },
-  { name: 'About', id: 'about' },
-  { name: 'Projects', id: 'projects' },
-  { name: 'Blog', id: 'blog' },
+  { name: 'About', id: 'home' },
   { name: 'CV', id: 'cv' },
+  { name: 'Blog', id: 'blog' },
   { name: 'YouTube', id: 'youtube' },
-  { name: 'Blockchain', id: 'blockchain' },
+  { name: 'Projects', id: 'projects' },
   { name: 'Contact', id: 'contact' },
 ];
 
@@ -48,12 +46,7 @@ export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <button
-              onClick={() => onNavigate('home')}
-              className="text-xl tracking-tight hover:text-[var(--color-accent)] transition-colors"
-            >
-              MG
-            </button>
+            <div></div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">

@@ -2,34 +2,34 @@ export const contactContent = {
   title: "Contact",
   contactInfo: [
     {
-      icon: "MapPin",
-      label: "Location",
-      value: "Amsterdam, Netherlands 🇳🇱",
-      link: ""
-    },
-    {
       icon: "Mail",
       label: "Email",
-      value: "connect@masoudghanbari.com",
+      value: "",
       link: "mailto:connect@masoudghanbari.com"
     },
     {
       icon: "Linkedin",
       label: "LinkedIn",
-      value: "/in/masoudghanbari",
+      value: "",
       link: "https://linkedin.com/in/masoudghanbari"
     },
     {
       icon: "Github",
       label: "GitHub",
-      value: "@masoudghanbari",
-      link: "https://github.com/masoudghanbari"
+      value: "",
+      link: "https://github.com/LaniusSenatorShrike"
     },
     {
       icon: "GraduationCap",
       label: "Google Scholar",
-      value: "Profile",
+      value: "",
       link: "https://scholar.google.de/citations?hl=en&user=80SOOu8AAAAJ"
+    },
+    {
+      icon: "Twitter",
+      label: "X (Twitter)",
+      value: "",
+      link: "https://x.com/masoudghanbari_"
     }
   ],
   calendly: {
