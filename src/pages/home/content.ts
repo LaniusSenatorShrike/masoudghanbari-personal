@@ -2,7 +2,7 @@ export const homeContent = {
   name: "Masoud Ghanbari",
   role: "Tech Lead / Data Architect",
   tagline: "Building scalable data infrastructure that processes 10M+ events per hour. Leading teams at Marktplaats to transform data into impact.",
-  profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+  profileImage: "/assets/IMG_2244.jpg",
   buttons: {
     primary: "View Projects",
     secondary: "Download CV",
