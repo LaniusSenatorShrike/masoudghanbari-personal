@@ -115,7 +115,7 @@ export function Contact() {
               </div>
               <Button
                 type="submit"
-                className="w-full gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white"
+                className="w-full gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-gray-900"
               >
                 <Send className="h-4 w-4" />
                 Send Message
@@ -129,7 +129,7 @@ export function Contact() {
             <div className="border border-gray-700 p-8">
               <Calendar className="h-8 w-8 text-[var(--color-accent)] mb-4" />
               <h4 className="mb-2">{content.calendly.title}</h4>
-              <p className="text-gray-400 mb-6">
+              <p className="text-gray-300 mb-6">
                 {content.calendly.description}
               </p>
               <Button variant="outline" className="w-full gap-2">
@@ -141,12 +141,12 @@ export function Contact() {
             {/* Newsletter */}
             <div className="border border-gray-700 p-8">
               <h4 className="mb-2">{content.newsletter.title}</h4>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-300 mb-4">
                 {content.newsletter.description}
               </p>
               <div className="flex gap-2">
                 <Input placeholder="your@email.com" type="email" />
-                <Button className="shrink-0 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white">
+                <Button className="shrink-0 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-gray-900">
                   Subscribe
                 </Button>
               </div>

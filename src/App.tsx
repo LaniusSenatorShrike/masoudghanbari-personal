@@ -14,12 +14,9 @@ import { CV } from './pages/cv/CV';
 import { YouTube } from './pages/youtube/YouTube';
 import { Contact } from './pages/contact/Contact';
 
-type Page = 'home' | 'projects' | 'blog' | 'cv' | 'youtube' | 'contact';
-
 function App() {
   const [lightMode, setLightMode] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [currentPage, setCurrentPage] = useState<Page>('home');
 
   useEffect(() => {
     // Initialize theme - dark mode by default
@@ -41,40 +38,16 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Scroll to top when page changes
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage]);
-
   const toggleLightMode = () => {
     setLightMode(!lightMode);
   };
 
-  const handleNavigate = (page: string) => {
-    setCurrentPage(page as Page);
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home onNavigate={handleNavigate} />;
-      case 'projects':
-        return <Projects />;
-      case 'blog':
-        return <Blog />;
-      case 'cv':
-        return <CV />;
-      case 'youtube':
-        return <YouTube />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Home onNavigate={handleNavigate} />;
-    }
   };
 
   return (
@@ -83,20 +56,24 @@ function App() {
       <Navigation
         lightMode={lightMode}
         toggleLightMode={toggleLightMode}
-        currentPage={currentPage}
-        onNavigate={handleNavigate}
+        scrollToSection={scrollToSection}
       />
 
       {/* Command Palette */}
       <CommandPalette
-        onNavigate={handleNavigate}
+        scrollToSection={scrollToSection}
         lightMode={lightMode}
         toggleLightMode={toggleLightMode}
       />
 
       {/* Main Content */}
       <main>
-        {renderPage()}
+        <section id="home" style={{ scrollMarginTop: '5rem' }}><Home /></section>
+        <section id="projects" style={{ scrollMarginTop: '5rem' }}><Projects /></section>
+        <section id="blog" style={{ scrollMarginTop: '5rem' }}><Blog /></section>
+        <section id="cv" style={{ scrollMarginTop: '5rem' }}><CV /></section>
+        <section id="youtube" style={{ scrollMarginTop: '5rem' }}><YouTube /></section>
+        <section id="contact" style={{ scrollMarginTop: '5rem' }}><Contact /></section>
       </main>
 
       {/* Footer */}
@@ -108,7 +85,7 @@ function App() {
           <Button
             size="icon"
             onClick={scrollToTop}
-            className="h-12 w-12 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white"
+            className="h-12 w-12 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-gray-900"
           >
             <ArrowUp className="h-5 w-5" />
           </Button>

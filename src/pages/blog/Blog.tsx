@@ -17,7 +17,7 @@ export function Blog() {
             <Badge
               key={category}
               variant="outline"
-              className="px-4 py-2 text-gray-400 cursor-pointer hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+              className="px-4 py-2 text-gray-300 cursor-pointer hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
             >
               {category}
             </Badge>
@@ -35,11 +35,11 @@ export function Blog() {
                   key={post.id}
                   className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors cursor-pointer"
                 >
-                  <Badge variant="secondary" className="mb-4 text-gray-400">
+                  <Badge variant="secondary" className="mb-4 text-gray-300">
                     {post.category}
                   </Badge>
                   <h4 className="mb-3">{post.title}</h4>
-                  <p className="text-gray-400 mb-4">{post.excerpt}</p>
+                  <p className="text-gray-300 mb-4">{post.excerpt}</p>
                   
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                     <span className="flex items-center gap-1">
@@ -75,7 +75,7 @@ export function Blog() {
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
-                        <Badge variant="secondary" className="text-gray-400">{post.category}</Badge>
+                        <Badge variant="secondary" className="text-gray-300">{post.category}</Badge>
                         <div className="flex items-center gap-4 text-sm text-gray-500">
                           <span className="flex items-center gap-1">
                             <Calendar className="h-3 w-3" />
@@ -88,7 +88,7 @@ export function Blog() {
                         </div>
                       </div>
                       <h4 className="mb-2">{post.title}</h4>
-                      <p className="text-gray-400">{post.excerpt}</p>
+                      <p className="text-gray-300">{post.excerpt}</p>
                     </div>
                     <div className="flex items-center gap-2 text-[var(--color-accent)] text-sm shrink-0">
                       Read

@@ -25,7 +25,7 @@ export function YouTube() {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 flex items-center justify-center transition-all duration-300">
                   <div className="bg-[var(--color-accent)] rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Play className="h-6 w-6 text-white fill-white" />
+                    <Play className="h-6 w-6 text-gray-900 fill-gray-900" />
                   </div>
                 </div>
                 <div className="absolute bottom-3 right-3 bg-black/80 px-2 py-1 text-xs text-white">
@@ -37,11 +37,11 @@ export function YouTube() {
               </div>
 
               <div className="p-6">
-                <Badge variant="secondary" className="mb-3 text-gray-400">
+                <Badge variant="secondary" className="mb-3 text-gray-300">
                   {video.category}
                 </Badge>
                 <h4 className="mb-3">{video.title}</h4>
-                <p className="text-gray-400 mb-4 text-sm">{video.description}</p>
+                <p className="text-gray-300 mb-4 text-sm">{video.description}</p>
                 <div className="flex items-center gap-1 text-sm text-gray-500">
                   <Eye className="h-4 w-4" />
                   <span>{video.views} views</span>
@@ -56,7 +56,7 @@ export function YouTube() {
             href={content.channelUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 font-mono uppercase bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-gray-900 transition-colors"
           >
             <Play className="h-5 w-5" />
             Visit YouTube Channel

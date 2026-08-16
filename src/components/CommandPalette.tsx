@@ -21,13 +21,13 @@ import {
 } from 'lucide-react';
 
 interface CommandPaletteProps {
-  onNavigate: (page: string) => void;
+  scrollToSection: (id: string) => void;
   lightMode: boolean;
   toggleLightMode: () => void;
 }
 
 export function CommandPalette({
-  onNavigate,
+  scrollToSection,
   lightMode,
   toggleLightMode,
 }: CommandPaletteProps) {
@@ -52,7 +52,7 @@ export function CommandPalette({
       // Download CV
       console.log('Downloading CV...');
     } else {
-      onNavigate(action);
+      scrollToSection(action);
     }
     setOpen(false);
   };

@@ -5,33 +5,43 @@ import { Button } from './ui/button';
 interface NavigationProps {
   lightMode: boolean;
   toggleLightMode: () => void;
-  currentPage: string;
-  onNavigate: (page: string) => void;
+  scrollToSection: (id: string) => void;
 }
 
 const navItems = [
   { name: 'About', id: 'home' },
-  { name: 'CV', id: 'cv' },
-  { name: 'Blog', id: 'blog' },
-  { name: 'YouTube', id: 'youtube' },
   { name: 'Projects', id: 'projects' },
+  { name: 'Blog', id: 'blog' },
+  { name: 'CV', id: 'cv' },
+  { name: 'YouTube', id: 'youtube' },
   { name: 'Contact', id: 'contact' },
 ];
 
-export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate }: NavigationProps) {
+export function Navigation({ lightMode, toggleLightMode, scrollToSection }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      const sections = navItems.map((item) => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 120;
+      let current = 'home';
+      for (const section of sections) {
+        if (section && section.offsetTop <= scrollPosition) {
+          current = section.id;
+        }
+      }
+      setActiveSection(current);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (page: string) => {
-    onNavigate(page);
+  const handleNavClick = (id: string) => {
+    scrollToSection(id);
     setMobileMenuOpen(false);
   };
 
@@ -54,10 +64,10 @@ export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`text-sm transition-colors ${
-                    currentPage === item.id
+                  className={`text-sm font-mono uppercase transition-colors ${
+                    activeSection === item.id
                       ? 'text-[var(--color-accent)]'
-                      : 'text-gray-400 hover:text-gray-100 light:hover:text-gray-900'
+                      : 'text-gray-300 hover:text-gray-100 light:hover:text-gray-900'
                   }`}
                 >
                   {item.name}
@@ -97,10 +107,10 @@ export function Navigation({ lightMode, toggleLightMode, currentPage, onNavigate
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`block w-full text-left py-2 transition-colors ${
-                    currentPage === item.id
+                  className={`block w-full text-left py-2 font-mono uppercase transition-colors ${
+                    activeSection === item.id
                       ? 'text-[var(--color-accent)]'
-                      : 'text-gray-400 hover:text-gray-100 light:hover:text-gray-900'
+                      : 'text-gray-300 hover:text-gray-100 light:hover:text-gray-900'
                   }`}
                 >
                   {item.name}

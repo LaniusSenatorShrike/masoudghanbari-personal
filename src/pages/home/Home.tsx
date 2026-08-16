@@ -3,11 +3,7 @@ import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { aboutContent as content } from './about-content';
 import { homeContent } from './content';
 
-interface HomeProps {
-  onNavigate: (page: string) => void;
-}
-
-export function Home({ onNavigate }: HomeProps) {
+export function Home() {
   return (
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
@@ -20,7 +16,7 @@ export function Home({ onNavigate }: HomeProps) {
           {/* Bio */}
           <div className="accent-line pl-8">
             <h3 className="mb-6">{content.bio.title}</h3>
-            <div className="space-y-4 text-gray-400">
+            <div className="space-y-4 text-gray-300">
               {content.bio.paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -51,7 +47,7 @@ export function Home({ onNavigate }: HomeProps) {
               <Badge
                 key={skill}
                 variant="outline"
-                className="px-4 py-2 border-gray-600 text-gray-400 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+                className="px-4 py-2 border-gray-600 text-gray-300 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
               >
                 {skill}
               </Badge>

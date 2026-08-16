@@ -43,7 +43,7 @@ export function Projects() {
               className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors"
             >
               <div className="flex justify-between items-start mb-4">
-                <Badge variant="outline" className="text-xs text-gray-400">
+                <Badge variant="outline" className="text-xs text-gray-300">
                   {project.category}
                 </Badge>
                 <div className="flex gap-2">
@@ -52,7 +52,7 @@ export function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
                       <Github className="h-4 w-4" />
                     </a>
@@ -62,7 +62,7 @@ export function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
                       <ExternalLink className="h-4 w-4" />
                     </a>
@@ -71,7 +71,7 @@ export function Projects() {
               </div>
 
               <h4 className="mb-3">{project.title}</h4>
-              <p className="text-gray-400 mb-4">{project.description}</p>
+              <p className="text-gray-300 mb-4">{project.description}</p>
               
               <div className="mb-4 pb-4 border-b border-gray-700">
                 <p className="text-sm text-[var(--color-accent)]">{project.impact}</p>
@@ -81,7 +81,7 @@ export function Projects() {
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs px-2 py-1 bg-gray-800 text-gray-400"
+                    className="text-xs px-2 py-1 bg-gray-800 text-gray-300"
                   >
                     {tech}
                   </span>

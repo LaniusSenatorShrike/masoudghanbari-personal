@@ -16,8 +16,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
-            <p className="text-xl mb-2">Masoud Ghanbari</p>
-            <p className="text-gray-400 light:text-gray-600">
+            <p className="font-mono uppercase font-semibold text-xl mb-2">Masoud Ghanbari</p>
+            <p className="font-mono uppercase text-gray-300 light:text-gray-600">
               Tech Lead | Data Architect | Amsterdam 🇳🇱
             </p>
           </div>
@@ -41,7 +41,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 light:border-gray-300 text-center text-gray-400 light:text-gray-600">
+        <div className="mt-12 pt-8 border-t border-gray-800 light:border-gray-300 text-center text-gray-300 light:text-gray-600">
           <p>
             © {currentYear} Masoud Ghanbari. Built with Next.js & TypeScript.
           </p>
