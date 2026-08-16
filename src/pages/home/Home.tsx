@@ -34,7 +34,6 @@ export function Home() {
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-[var(--color-accent)]"></div>
             </div>
           </div>
         </div>
