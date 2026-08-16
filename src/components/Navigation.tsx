@@ -9,18 +9,16 @@ interface NavigationProps {
 }
 
 const navItems = [
-  { name: 'About', id: 'home' },
+  { name: 'Intro', id: 'intro' },
+  { name: 'Experience', id: 'experience' },
   { name: 'Projects', id: 'projects' },
-  { name: 'Blog', id: 'blog' },
-  { name: 'CV', id: 'cv' },
-  { name: 'YouTube', id: 'youtube' },
-  { name: 'Contact', id: 'contact' },
+  { name: 'Connect', id: 'connect' },
 ];
 
 export function Navigation({ lightMode, toggleLightMode, scrollToSection }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('intro');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +26,7 @@ export function Navigation({ lightMode, toggleLightMode, scrollToSection }: Navi
 
       const sections = navItems.map((item) => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 120;
-      let current = 'home';
+      let current = 'intro';
       for (const section of sections) {
         if (section && section.offsetTop <= scrollPosition) {
           current = section.id;

@@ -1,92 +1,41 @@
-import { useState } from 'react';
 import { Badge } from '../../components/ui/badge';
-import { Tabs, TabsList, TabsTrigger } from '../../components/ui/tabs';
-import { ExternalLink, Github } from 'lucide-react';
 import { projectsContent as content } from './content';
 
 export function Projects() {
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const filteredProjects =
-    activeCategory === 'All'
-      ? content.projects
-      : content.projects.filter((p) => p.category === activeCategory);
-
   return (
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h2 className="mb-4">{content.title}</h2>
-          <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
-        </div>
+        <h2 className="font-mono uppercase mb-4">PROJECTS</h2>
+        <div className="w-20 h-1 bg-[var(--color-accent)] mb-16"></div>
 
-        {/* Category Filter */}
-        <Tabs
-          defaultValue="All"
-          className="mb-12"
-          onValueChange={(value) => setActiveCategory(value)}
-        >
-          <TabsList className="grid w-full max-w-md grid-cols-4">
-            {content.categories.map((category) => (
-              <TabsTrigger key={category} value={category}>
-                {category}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
-
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+        <div className="grid md:grid-cols-2 gap-6">
+          {content.projects.map((project) => (
             <div
               key={project.id}
               className="border border-gray-700 p-6 hover:border-[var(--color-accent)] transition-colors"
             >
-              <div className="flex justify-between items-start mb-4">
-                <Badge variant="outline" className="text-xs text-gray-300">
-                  {project.category}
-                </Badge>
-                <div className="flex gap-2">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      <Github className="h-4 w-4" />
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  )}
-                </div>
+              <div className="flex items-center gap-3 mb-2">
+                <h4 className="font-bold">{project.title}</h4>
+                {project.isOpenSource && (
+                  <Badge variant="outline" className="text-xs text-gray-300">
+                    Open Source
+                  </Badge>
+                )}
               </div>
 
-              <h4 className="mb-3">{project.title}</h4>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              
-              <div className="mb-4 pb-4 border-b border-gray-700">
-                <p className="text-sm text-[var(--color-accent)]">{project.impact}</p>
-              </div>
+              {project.year && (
+                <p className="text-gray-400 text-sm mb-2">{project.year}</p>
+              )}
 
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-2 py-1 bg-gray-800 text-gray-300"
-                  >
-                    {tech}
-                  </span>
+              {project.description && (
+                <p className="text-gray-300 mb-2">{project.description}</p>
+              )}
+
+              <ul className="list-disc list-inside space-y-1 text-gray-300 mt-4">
+                {project.highlights.map((highlight, index) => (
+                  <li key={index}>{highlight}</li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

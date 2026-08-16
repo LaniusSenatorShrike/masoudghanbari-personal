@@ -11,11 +11,7 @@ import {
 import {
   Home,
   Briefcase,
-  BookOpen,
-  FileText,
-  Youtube,
   Mail,
-  Download,
   Moon,
   Sun,
 } from 'lucide-react';
@@ -48,9 +44,6 @@ export function CommandPalette({
   const handleSelect = (action: string) => {
     if (action === 'theme') {
       toggleLightMode();
-    } else if (action === 'cv-download') {
-      // Download CV
-      console.log('Downloading CV...');
     } else {
       scrollToSection(action);
     }
@@ -63,36 +56,24 @@ export function CommandPalette({
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Navigation">
-          <CommandItem onSelect={() => handleSelect('home')}>
+          <CommandItem onSelect={() => handleSelect('intro')}>
             <Home className="mr-2 h-4 w-4" />
-            <span>About</span>
+            <span>Intro</span>
           </CommandItem>
-          <CommandItem onSelect={() => handleSelect('cv')}>
-            <FileText className="mr-2 h-4 w-4" />
-            <span>CV</span>
-          </CommandItem>
-          <CommandItem onSelect={() => handleSelect('blog')}>
-            <BookOpen className="mr-2 h-4 w-4" />
-            <span>Blog</span>
-          </CommandItem>
-          <CommandItem onSelect={() => handleSelect('youtube')}>
-            <Youtube className="mr-2 h-4 w-4" />
-            <span>YouTube</span>
+          <CommandItem onSelect={() => handleSelect('experience')}>
+            <Briefcase className="mr-2 h-4 w-4" />
+            <span>Experience</span>
           </CommandItem>
           <CommandItem onSelect={() => handleSelect('projects')}>
             <Briefcase className="mr-2 h-4 w-4" />
             <span>Projects</span>
           </CommandItem>
-          <CommandItem onSelect={() => handleSelect('contact')}>
+          <CommandItem onSelect={() => handleSelect('connect')}>
             <Mail className="mr-2 h-4 w-4" />
-            <span>Contact</span>
+            <span>Connect</span>
           </CommandItem>
         </CommandGroup>
         <CommandGroup heading="Actions">
-          <CommandItem onSelect={() => handleSelect('cv-download')}>
-            <Download className="mr-2 h-4 w-4" />
-            <span>Download CV</span>
-          </CommandItem>
           <CommandItem onSelect={() => handleSelect('theme')}>
             {lightMode ? (
               <Moon className="mr-2 h-4 w-4" />

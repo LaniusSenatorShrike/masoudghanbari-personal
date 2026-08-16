@@ -4,10 +4,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/LaniusSenatorShrike', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/masoudghanbari', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/masoudghanbari', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://x.com/masoudghanbari_', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:connect@masoudghanbari.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:ghanbari.masoud@gmail.com', label: 'Email' },
     { icon: GraduationCap, href: 'https://scholar.google.de/citations?hl=en&user=80SOOu8AAAAJ', label: 'Google Scholar' },
   ];
 
@@ -18,7 +18,7 @@ export function Footer() {
           <div className="text-center md:text-left">
             <p className="font-mono uppercase font-semibold text-xl mb-2">Masoud Ghanbari</p>
             <p className="font-mono uppercase text-gray-300 light:text-gray-600">
-              Tech Lead | Data Architect | Amsterdam 🇳🇱
+              Lead Analytics Engineer | Data Architect | Amsterdam
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-800 light:border-gray-300 text-center text-gray-300 light:text-gray-600">
           <p>
-            © {currentYear} Masoud Ghanbari. Built with Next.js & TypeScript.
+            © {currentYear} Masoud Ghanbari. All rights reserved.
           </p>
           <p className="mt-2 text-sm">
             Press{' '}

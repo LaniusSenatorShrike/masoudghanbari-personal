@@ -8,10 +8,8 @@ import { Toaster } from './components/ui/sonner';
 
 // Page imports
 import { Home } from './pages/home/Home';
+import { Experience } from './pages/experience/Experience';
 import { Projects } from './pages/projects/Projects';
-import { Blog } from './pages/blog/Blog';
-import { CV } from './pages/cv/CV';
-import { YouTube } from './pages/youtube/YouTube';
 import { Contact } from './pages/contact/Contact';
 
 function App() {
@@ -68,12 +66,10 @@ function App() {
 
       {/* Main Content */}
       <main>
-        <section id="home" style={{ scrollMarginTop: '5rem' }}><Home /></section>
+        <section id="intro" style={{ scrollMarginTop: '5rem' }}><Home /></section>
+        <section id="experience" style={{ scrollMarginTop: '5rem' }}><Experience /></section>
         <section id="projects" style={{ scrollMarginTop: '5rem' }}><Projects /></section>
-        <section id="blog" style={{ scrollMarginTop: '5rem' }}><Blog /></section>
-        <section id="cv" style={{ scrollMarginTop: '5rem' }}><CV /></section>
-        <section id="youtube" style={{ scrollMarginTop: '5rem' }}><YouTube /></section>
-        <section id="contact" style={{ scrollMarginTop: '5rem' }}><Contact /></section>
+        <section id="connect" style={{ scrollMarginTop: '5rem' }}><Contact /></section>
       </main>
 
       {/* Footer */}

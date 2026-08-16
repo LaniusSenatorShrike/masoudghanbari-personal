@@ -1,66 +1,57 @@
 export const projectsContent = {
   title: "Projects",
-  categories: ["All", "Data", "AI", "Cloud"],
   projects: [
     {
       id: 1,
-      title: "Kafka Notification System",
-      category: "Data",
-      description: "Real-time notification processing system handling 10M+ events per hour with Kafka Streams and AWS infrastructure.",
-      impact: "10M events/hour, 99.9% uptime",
-      tech: ["Kafka", "Python", "AWS", "PostgreSQL", "Redis"],
-      github: "",
-      demo: ""
+      title: "Spiral",
+      year: "2026",
+      isOpenSource: true,
+      description: "Founder and maintainer (open source)",
+      highlights: [
+        "an AI agent harness built for Long-horizon self-improving tasks",
+        "powered by LangChain's hill climbing loop architecture",
+      ],
     },
     {
       id: 2,
-      title: "GDPR Compliance Platform",
-      category: "Data",
-      description: "Automated data privacy platform processing 1,000+ daily data subject requests with full audit trails.",
-      impact: "1K daily requests, 100% compliance",
-      tech: ["Airflow", "dbt", "PostgreSQL", "Python", "Terraform"],
-      github: "",
-      demo: ""
+      title: "Multi-tenant Hybrid Notification Middleware",
+      year: "2024",
+      isOpenSource: false,
+      description: "",
+      highlights: [
+        "Designed and implemented a notification middleware sending up to 10M (push/in-app) notifications per hour to Knocker/Batch API endpoints, triggered by Adobe Campaign and Salesforce Marketing Cloud.",
+      ],
     },
     {
       id: 3,
-      title: "GenAI Marketing Platform",
-      category: "AI",
-      description: "AI-powered marketing content generation using AWS Bedrock with Claude and GPT-4 models.",
-      impact: "70% time reduction in content creation",
-      tech: ["AWS Bedrock", "Python", "LangChain", "React", "TypeScript"],
-      github: "",
-      demo: ""
+      title: "End-to-End GDPR Middleware",
+      year: "2024",
+      isOpenSource: false,
+      description: "",
+      highlights: [
+        "Architected and implemented a middleware for Marktplaats handling ~1K daily DDR and SAR requests to manage PII data in the Marketing Data Hub.",
+      ],
     },
     {
       id: 4,
-      title: "Kleinanzeigen Rebranding",
-      category: "Cloud",
-      description: "Orchestrated email delivery for 67M users during major rebrand with zero downtime.",
-      impact: "67M emails, 98% delivery rate",
-      tech: ["AWS SES", "Airflow", "Python", "Terraform", "Monitoring"],
-      github: "",
-      demo: ""
+      title: "eBay Kleinanzeigen Rebranding Communication",
+      year: "2024",
+      isOpenSource: false,
+      description: "",
+      highlights: [
+        "Executed data strategy to send +67M emails and +30M push notifications to +30M users in Germany, leading to a 115% MoM growth in CRM Monthly Active Users.",
+      ],
     },
     {
       id: 5,
-      title: "ETL Data Pipeline Framework",
-      category: "Data",
-      description: "Scalable ETL framework processing 500GB+ daily with Airflow orchestration and dbt transformations.",
-      impact: "500GB/day processed, €2M saved",
-      tech: ["Airflow", "dbt", "Spark", "Snowflake", "Python"],
-      github: "",
-      demo: ""
+      title: "Published Papers & Articles",
+      year: "",
+      isOpenSource: false,
+      description: "",
+      highlights: [
+        "The Agentic Era of Coding",
+        "Databricks Lakebase Explained",
+      ],
     },
-    {
-      id: 6,
-      title: "ML Feature Store",
-      category: "AI",
-      description: "Real-time feature engineering platform for ML models with low-latency serving.",
-      impact: "<10ms p99 latency",
-      tech: ["Redis", "Kafka", "Python", "FastAPI", "PostgreSQL"],
-      github: "",
-      demo: ""
-    }
-  ]
+  ],
 };

@@ -1,29 +1,49 @@
 import { Badge } from '../../components/ui/badge';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
-import { aboutContent as content } from './about-content';
 import { homeContent } from './content';
 
 export function Home() {
   return (
     <section className="min-h-screen py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h2 className="mb-4">{content.title}</h2>
-          <div className="w-20 h-1 bg-[var(--color-accent)]"></div>
-        </div>
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Left column */}
+          <div>
+            <h1 className="font-mono uppercase text-5xl md:text-7xl font-bold tracking-tight mb-6">
+              {homeContent.name}
+            </h1>
+            <p className="text-xl text-[var(--color-accent)] mb-2">{homeContent.role}</p>
+            <p className="text-gray-400 mb-6">{homeContent.location}</p>
+            <p className="text-gray-300 mb-8 leading-relaxed">{homeContent.summary}</p>
 
-        <div className="grid md:grid-cols-2 gap-16 mb-20">
-          {/* Bio */}
-          <div className="accent-line pl-8">
-            <h3 className="mb-6">{content.bio.title}</h3>
-            <div className="space-y-4 text-gray-300">
-              {content.bio.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+            <div className="flex flex-wrap gap-3 mb-8">
+              {homeContent.labels.map((label) => (
+                <Badge
+                  key={label}
+                  variant="outline"
+                  className="px-4 py-2 border-gray-600 text-gray-300 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+                >
+                  {label}
+                </Badge>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {homeContent.socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-gray-700 px-4 py-2 hover:border-[var(--color-accent)] transition-colors text-sm font-mono uppercase"
+                >
+                  {social.label}
+                </a>
               ))}
             </div>
           </div>
 
-          {/* Profile Image */}
+          {/* Right column */}
           <div className="flex justify-center md:justify-end">
             <div className="relative">
               <div className="absolute -inset-4 bg-[var(--color-accent)] opacity-10"></div>
@@ -35,22 +55,6 @@ export function Home() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Skills */}
-        <div>
-          <h3 className="mb-8">{content.skills.title}</h3>
-          <div className="flex flex-wrap gap-3">
-            {content.skills.items.map((skill) => (
-              <Badge
-                key={skill}
-                variant="outline"
-                className="px-4 py-2 border-gray-600 text-gray-300 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
-              >
-                {skill}
-              </Badge>
-            ))}
           </div>
         </div>
       </div>
